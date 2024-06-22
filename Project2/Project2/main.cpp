@@ -24,17 +24,8 @@ template <> void pow(std::vector<int> vec)
 int main(int argc, char** argv)
 {
 	//setlocale(LC_ALL, "ru");
-	int size = 6;
-	pow(size);
-
-	std::vector<int> vec;
-	vec.reserve(6);
-	for (size_t i = 0; i < size; i++)
-	{
-		vec.push_back(i);
-	}
-	vec[2] = -99;//=)
-
-	pow(vec);
+	Two_dimensional_array<int> table(6, 2);
+	//* cout << table[i][j]; * table[i][j] = value;.
+	
 	return 0;
 }
