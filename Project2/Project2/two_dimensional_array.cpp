@@ -28,7 +28,12 @@ Two_dimensional_array<int>::Two_dimensional_array(int aCols_size, int aRows_size
 	}
 }
 
-/*int** Two_dimensional_array<int>::operator[](int element)
+int* Two_dimensional_array<int>::operator[](int index)
 {
+	return this->two_dim_array[index];
+}
 
-}*/
+int Two_dimensional_array<int>::operator[](int index) const
+{
+	return *this->two_dim_array[index];
+}
