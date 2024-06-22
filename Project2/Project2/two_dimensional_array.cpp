@@ -33,7 +33,7 @@ int* Two_dimensional_array<int>::operator[](int index)
 	return this->two_dim_array[index];
 }
 
-int Two_dimensional_array<int>::operator[](int index) const
+const int Two_dimensional_array<int>::operator[](int index) const
 {
 	return *this->two_dim_array[index];
 }

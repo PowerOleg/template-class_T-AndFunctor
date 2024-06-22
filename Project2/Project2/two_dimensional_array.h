@@ -8,7 +8,7 @@ public:
 	const int size();
 	void add(T element);
 	T* operator[](T index);
-	T operator[](T index) const;
+	const T operator[](T index) const;
 	void delete_all(int rows_size);
 	~Two_dimensional_array();
 private:
