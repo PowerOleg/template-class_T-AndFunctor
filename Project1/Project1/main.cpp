@@ -2,26 +2,36 @@
 #include <cmath>
 #include <vector>
 
-template<class T> void pow(T var)
+template<class T> T pow(T var)
 {
-	std::cout << "[OUT]: " << std::pow(var, 2) << std::endl;
+	return std::pow(var, 2);
+	
 }
 
-template <> void pow(std::vector<int> vec)
+void print(const std::vector<int>& vec)
 {
 	printf("[OUT]:");
-	for (int value : vec)
+	for (const int& value : vec)
 	{
-		std::cout << " " << std::pow(value, 2);
+		std::cout << " " << value;
 	}
 	std::cout << std::endl;
 }
 
+template <> std::vector<int> pow(std::vector<int> vec)
+{
+	for (int& value : vec)
+	{
+		value = std::pow(value, 2);
+	}
+	return vec;
+}
+
 int main(int argc, char** argv)
 {
-	//setlocale(LC_ALL, "ru");
 	int size = 6;
-	pow(size);
+	std::cout << "[OUT]: " << pow(size) << std::endl;
+	
 
 	std::vector<int> vec;
 	vec.reserve(6);
@@ -29,8 +39,9 @@ int main(int argc, char** argv)
 	{
 		vec.push_back(i);
 	}
-	vec[2] = -99;//=)
+	vec[2] = -99;
 
-	pow(vec);
+	vec = pow(vec);
+	print(vec);
 	return 0;
 }
