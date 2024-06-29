@@ -4,15 +4,13 @@ template<typename T>
 class Two_dimensional_array
 {
 public:
-	Two_dimensional_array(int cols_size, int rows_size);
+	Two_dimensional_array(size_t cols_size, size_t rows_size);
 	const int size();
-	void add(T element);
-	T* operator[](T index);
-	const T operator[](T index) const;
-	void delete_all(int rows_size);
+	T* operator[](size_t index);
+	T operator[](size_t index) const;
 	~Two_dimensional_array();
 private:
 	T** two_dim_array;
-	int rows_size;
-	int cols_size;
+	size_t rows_size;
+	size_t cols_size;
 };

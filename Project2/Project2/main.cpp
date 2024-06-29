@@ -1,22 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
-#include "two_dimensional_array.h"
-
-template<class T> void pow(T var)
-{
-	std::cout << "[OUT]: " << std::pow(var, 2) << std::endl;
-}
-
-template <> void pow(std::vector<int> vec)
-{
-	printf("[OUT]:");
-	for (int value : vec)
-	{
-		std::cout << " " << std::pow(value, 2);
-	}
-	std::cout << std::endl;
-}
+#include "Two_dimensional_array.h"
 
 int main(int argc, char** argv)
 {
